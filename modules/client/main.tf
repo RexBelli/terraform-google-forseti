@@ -96,11 +96,20 @@ data "template_file" "forseti_client_config" {
 # Forseti client VM #
 #-------------------#
 resource "google_compute_instance" "forseti-client" {
+<<<<<<< HEAD
   name                      = local.client_name
   zone                      = local.client_zone
   project                   = var.project_id
   machine_type              = var.client_type
   tags                      = var.client_tags
+=======
+  count                     = "${var.deploy_location == "gce" ? 1 : 0}"
+  name                      = "${local.client_name}"
+  zone                      = "${local.client_zone}"
+  project                   = "${var.project_id}"
+  machine_type              = "${var.client_type}"
+  tags                      = "${var.client_tags}"
+>>>>>>> savegame
   allow_stopping_for_update = true
   metadata                  = var.client_instance_metadata
   metadata_startup_script   = data.template_file.forseti_client_startup_script.rendered

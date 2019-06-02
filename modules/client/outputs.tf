@@ -16,12 +16,20 @@
 
 output "forseti-client-vm-name" {
   description = "Forseti Client VM name"
+<<<<<<< HEAD
   value       = google_compute_instance.forseti-client.name
+=======
+  value       = "${element(concat(google_compute_instance.forseti-client.*.name, list("")), 0)}"
+>>>>>>> savegame
 }
 
 output "forseti-client-vm-ip" {
   description = "Forseti Client VM private IP address"
+<<<<<<< HEAD
   value       = google_compute_instance.forseti-client.network_interface[0].network_ip
+=======
+  value       = "${element(concat(google_compute_instance.forseti-client.*.network_interface.0.network_ip, list("")), 0)}"
+>>>>>>> savegame
 }
 
 output "forseti-client-service-account" {

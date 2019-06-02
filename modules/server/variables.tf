@@ -719,3 +719,7 @@ variable "groups_settings_violations_should_notify" {
   default     = "true"
 }
 
+variable "deploy_location" {
+  description = "Where to deploy Forseti to, gce or gke"
+  default     = "gce"
+}

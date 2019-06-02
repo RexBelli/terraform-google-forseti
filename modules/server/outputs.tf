@@ -16,12 +16,12 @@
 
 output "forseti-server-vm-name" {
   description = "Forseti Server VM name"
-  value       = google_compute_instance.forseti-server.name
+  value       = "${element(concat(google_compute_instance.forseti-server.*.name, list("")), 0)}"
 }
 
 output "forseti-server-vm-ip" {
   description = "Forseti Server VM private IP address"
-  value       = google_compute_instance.forseti-server.network_interface[0].network_ip
+  value       = "${element(concat(google_compute_instance.forseti-server.*.network_interface.0.network_ip, list("")), 0)}"
 }
 
 output "forseti-server-service-account" {

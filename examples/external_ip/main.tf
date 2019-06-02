@@ -55,8 +55,8 @@ module "forseti-install-simple" {
   server_instance_metadata = "${var.instance_metadata}"
   client_tags              = "${var.instance_tags}"
   server_tags              = "${var.instance_tags}"
-  client_private           = false                       # enable client public IP
-  server_private           = false                       # enable server public IP
+  client_private           = false # enable client public IP
+  server_private           = false # enable server public IP
 
   # These optional blocks allow to override the default `access_config` block
   # (empty by default) for the client and server VMs.

@@ -116,3 +116,10 @@ variable "services" {
   default     = []
 }
 
+<<<<<<< HEAD
+=======
+variable "deploy_location" {
+  description = "Where to deploy Forseti to, gce or gke"
+  default     = "gce"
+}
+>>>>>>> savegame

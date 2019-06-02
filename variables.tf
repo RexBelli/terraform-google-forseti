@@ -725,6 +725,11 @@ variable "enable_cai_bucket" {
   default     = "true"
 }
 
+variable "deploy_location" {
+  description = "Where to deploy Forseti to, gce or gke"
+  default     = "gce"
+}
+
 #--------#
 # Config #
 #--------#
@@ -752,3 +757,25 @@ variable "sendgrid_api_key" {
   default     = ""
 }
 
+#-----------#
+# K8s Stuff #
+#-----------#
+variable "kubernetes_master_endpoint" {
+  description = "Master endpoint for Kubernetes cluster"
+  default     = ""
+}
+
+variable "kubernetes_cluster_ca_certificate" {
+  description = "Cluster CA certificate for Kubernetes cluster"
+  default     = ""
+}
+
+variable "kubernetes_client_certificate" {
+  description = "Client certificate for Kubernetes cluster"
+  default     = ""
+}
+
+variable "kubernetes_client_key" {
+  description = "Client keyfor Kubernetes cluster"
+  default     = ""
+}
