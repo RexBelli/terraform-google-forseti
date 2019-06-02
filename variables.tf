@@ -75,31 +75,31 @@ variable "server_boot_image" {
 
 variable "server_instance_metadata" {
   description = "Metadata key/value pairs to make available from within the server instance."
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
 variable "server_grpc_allow_ranges" {
   description = "List of CIDRs that will be allowed gRPC access to forseti server"
-  type        = "list"
+  type        = list(string)
   default     = ["10.128.0.0/9"]
 }
 
 variable "server_ssh_allow_ranges" {
   description = "List of CIDRs that will be allowed ssh access to forseti server"
-  type        = "list"
+  type        = list(string)
   default     = ["0.0.0.0/0"]
 }
 
 variable "server_tags" {
   description = "GCE Forseti Server VM Tags"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "server_access_config" {
   description = "Server instance 'access_config' block"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -621,25 +621,25 @@ variable "client_region" {
 
 variable "client_instance_metadata" {
   description = "Metadata key/value pairs to make available from within the client instance."
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
 variable "client_ssh_allow_ranges" {
   description = "List of CIDRs that will be allowed ssh access to forseti client"
-  type        = "list"
+  type        = list(string)
   default     = ["0.0.0.0/0"]
 }
 
 variable "client_tags" {
   description = "GCE Forseti Client VM Tags"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "client_access_config" {
   description = "Client instance 'access_config' block"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -743,7 +743,7 @@ variable "folder_id" {
 
 variable "composite_root_resources" {
   description = "A list of root resources that Forseti will monitor. This supersedes the root_resource_id when set."
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -751,3 +751,4 @@ variable "sendgrid_api_key" {
   description = "Sendgrid.com API key to enable email notifications"
   default     = ""
 }
+

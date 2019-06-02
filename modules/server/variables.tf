@@ -539,19 +539,19 @@ variable "server_boot_image" {
 
 variable "server_instance_metadata" {
   description = "Metadata key/value pairs to make available from within the server instance."
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
 variable "server_tags" {
   description = "VM instance tags"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "server_access_config" {
   description = "Server instance 'access_config' block"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -630,13 +630,13 @@ variable "network_project" {
 
 variable "server_grpc_allow_ranges" {
   description = "List of CIDRs that will be allowed gRPC access to forseti server"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "server_ssh_allow_ranges" {
   description = "List of CIDRs that will be allowed ssh access to forseti server"
-  type        = "list"
+  type        = list(string)
   default     = ["0.0.0.0/0"]
 }
 
@@ -671,7 +671,7 @@ variable "folder_id" {
 
 variable "composite_root_resources" {
   description = "A list of root resources that Forseti will monitor. This supersedes the root_resource_id when set."
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -686,7 +686,7 @@ variable "suffix" {
 
 variable "services" {
   description = "An artificial dependency to bypass #10462"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -718,3 +718,4 @@ variable "groups_settings_violations_should_notify" {
   description = "Notify for groups settings violations"
   default     = "true"
 }
+

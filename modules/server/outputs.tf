@@ -16,20 +16,21 @@
 
 output "forseti-server-vm-name" {
   description = "Forseti Server VM name"
-  value       = "${google_compute_instance.forseti-server.name}"
+  value       = google_compute_instance.forseti-server.name
 }
 
 output "forseti-server-vm-ip" {
   description = "Forseti Server VM private IP address"
-  value       = "${google_compute_instance.forseti-server.network_interface.0.network_ip}"
+  value       = google_compute_instance.forseti-server.network_interface[0].network_ip
 }
 
 output "forseti-server-service-account" {
   description = "Forseti Server service account"
-  value       = "${google_service_account.forseti_server.email}"
+  value       = google_service_account.forseti_server.email
 }
 
 output "forseti-server-storage-bucket" {
   description = "Forseti Server storage bucket"
-  value       = "${google_storage_bucket.server_config.id}"
+  value       = google_storage_bucket.server_config.id
 }
+
