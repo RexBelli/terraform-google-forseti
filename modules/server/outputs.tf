@@ -35,5 +35,6 @@ output "forseti-server-storage-bucket" {
 }
 
 output "root_resource_id" {
-  value = "${local.root_resource_id}"
+  description = "The root resource used in server configuration"
+  value       = "${local.root_resource_id}"
 }
