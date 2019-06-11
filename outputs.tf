@@ -58,3 +58,18 @@ output "suffix" {
   description = "The random suffix appended to Forseti resources"
   value       = "${local.random_hash}"
 }
+
+output "root_resource_id" {
+  description = "The root resource used in server configuration"
+  value       = "${module.server.root_resource_id}"
+}
+
+output "gsuite_admin_email" {
+  description = "The value passed as gsuite_admin_email to the module"
+  value       = "${var.gsuite_admin_email}"
+}
+
+output "enable_cai_bucket" {
+  description = "If CAI export is enabled"
+  value       = "${var.enable_cai_bucket}"
+}

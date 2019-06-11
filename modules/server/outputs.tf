@@ -33,3 +33,7 @@ output "forseti-server-storage-bucket" {
   description = "Forseti Server storage bucket"
   value       = "${google_storage_bucket.server_config.id}"
 }
+
+output "root_resource_id" {
+  value = "${local.root_resource_id}"
+}
